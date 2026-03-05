@@ -28,7 +28,7 @@ url: "https://arambh-labs.github.io" # the base hostname & protocol for your sit
 # github_username:  jekyll
 
 # Build settings
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 # Just the Docs theme configuration
 search_enabled: true
@@ -58,6 +58,7 @@ heading_anchors: true
 
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
