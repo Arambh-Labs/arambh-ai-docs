@@ -22,6 +22,22 @@ Security Information and Event Management platforms for threat detection and ana
 |-------------|-------------|---------|
 | [**IBM QRadar**](ibm-qradar) | Query offenses, run AQL queries, and analyze security events | Get Offenses, Get Events, Run Query, Get IPs |
 
+### 🔥 Network Security
+
+Firewall and network security platforms for traffic control and threat prevention.
+
+| Integration | Description | Actions |
+|-------------|-------------|---------|
+| [**Fortinet FortiGate**](fortigate-firewall) | Manage host quarantine, block/unblock IPs, applications, and URLs on FortiGate firewalls | Quarantine Host, Unquarantine Host, Block IP, Unblock IP, Block Application, Unblock Application, Block URL, Unblock URL |
+
+### 🛡️ Endpoint Detection & Response
+
+Endpoint security platforms for threat detection, investigation, and response.
+
+| Integration | Description | Actions |
+|-------------|-------------|---------|
+| [**SentinelOne**](sentinel-one) | Investigate threats, query Deep Visibility events, and retrieve cloud detection alerts | Get Hash Details, Get Threat Details, Fetch Threats, Get Threat Events, Get Events, Get Events By Type, Get Alerts |
+
 ### 💬 Communication & Collaboration
 
 Tools for notifications, alerts, and team collaboration.

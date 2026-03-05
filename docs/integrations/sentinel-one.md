@@ -56,7 +56,7 @@ Integration with SentinelOne EDR platform for endpoint threat detection, investi
 
 ### 2. Configure in Arambh AI
 
-- Go to **Settings** → **Integrations** → **SentinelOne**
+- Go to **Integrations** → **SentinelOne**
 - Enter your **Base URL** (e.g., `https://your-tenant.sentinelone.net`)
 - Paste your **API Token**
 - Set the **API Version** (default: `v2.1`)
@@ -310,18 +310,6 @@ The token's permissions are determined by the SentinelOne user role. For this in
 ### Can I use multiple configurations?
 
 Yes, use the `config_name` parameter to maintain multiple configurations (e.g., `production`, `staging`). Each configuration is stored separately.
-
-### How long do Deep Visibility queries take?
-
-Queries typically complete within a few seconds to a few minutes depending on the time range and scope. The integration polls every 20 seconds and will wait up to 10 minutes before timing out.
-
-### What API version should I use?
-
-The default is `v2.1`, which is the current stable version. Only change this if your SentinelOne instance requires a specific version.
-
-### Why is my Deep Visibility query returning no results?
-
-Ensure that the `from_date` and `to_date` range covers the expected event window, and that the PowerQuery syntax is correct. Deep Visibility data retention limits may also affect results for older time ranges.
 
 ---
 
