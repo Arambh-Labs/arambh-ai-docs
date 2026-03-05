@@ -12,7 +12,7 @@ Welcome to the Arambh AI documentation. Find everything you need to deploy, inte
 
 ## Documentation Sections
 
-### 📦 [Deployment Guide](/docs/deployment-guide/)
+### 📦 [Deployment Guide]({{ site.baseurl }}/docs/deployment-guide/)
 Complete guide for deploying Arambh AI in your environment. Covers installation, configuration, deployment options, and post-deployment verification.
 
 **Topics covered:**
@@ -22,7 +22,7 @@ Complete guide for deploying Arambh AI in your environment. Covers installation,
 - Health checks and verification
 - FAQ and troubleshooting
 
-### 🔌 [Integrations Guide](/docs/integrations-guide/)
+### 🔌 [Integrations Guide]({{ site.baseurl }}/docs/integrations-guide/)
 Learn how to connect Arambh AI with third-party services and platforms. Includes setup instructions for popular tools and custom integration options.
 
 **Topics covered:**
@@ -32,7 +32,7 @@ Learn how to connect Arambh AI with third-party services and platforms. Includes
 - Webhooks and custom integrations
 - FAQ and troubleshooting
 
-### 📖 [User Guide](/docs/user-guide/)
+### 📖 [User Guide]({{ site.baseurl }}/docs/user-guide/)
 Comprehensive guide for end users. Learn how to navigate the interface, use core features, and get the most out of Arambh AI.
 
 **Topics covered:**
@@ -44,9 +44,9 @@ Comprehensive guide for end users. Learn how to navigate the interface, use core
 
 ## Quick Links
 
-- **Getting Started:** New to Arambh AI? Start with the [User Guide](/docs/user-guide/#getting-started)
-- **Installation:** Ready to deploy? Check the [Deployment Guide](/docs/deployment-guide/#installation)
-- **Integrations:** Need to connect external services? See the [Integrations Guide](/docs/integrations-guide/)
+- **Getting Started:** New to Arambh AI? Start with the [User Guide]({{ site.baseurl }}/docs/user-guide/#getting-started)
+- **Installation:** Ready to deploy? Check the [Deployment Guide]({{ site.baseurl }}/docs/deployment-guide/#installation)
+- **Integrations:** Need to connect external services? See the [Integrations Guide]({{ site.baseurl }}/docs/integrations-guide/)
 - **Support:** Need help? Visit our [Help Center](#) or contact support@arambhlabs.com
 
 ## Additional Resources
