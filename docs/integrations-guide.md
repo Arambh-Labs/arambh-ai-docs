@@ -20,7 +20,7 @@ Security Information and Event Management platforms for threat detection and ana
 
 | Integration | Description | Actions |
 |-------------|-------------|---------|
-| [**IBM QRadar**](integrations/ibm-qradar) | Query offenses, run AQL queries, and analyze security events | Get Offenses, Get Events, Run Query, Get IPs |
+| [**IBM QRadar**](ibm-qradar) | Query offenses, run AQL queries, and analyze security events | Get Offenses, Get Events, Run Query, Get IPs |
 
 ### 💬 Communication & Collaboration
 
@@ -28,8 +28,8 @@ Tools for notifications, alerts, and team collaboration.
 
 | Integration | Description | Actions |
 |-------------|-------------|---------|
-| [**Microsoft Teams**](integrations/microsoft-teams) | Send messages, replies, and approval cards to Teams channels | Send Message, Reply, Chat, Approval Card |
-| [**Microsoft Office 365**](integrations/microsoft-office365) | Send and manage emails with attachments | Send Email, Search Emails, Reply to Email |
+| [**Microsoft Teams**](microsoft-teams) | Send messages, replies, and approval cards to Teams channels | Send Message, Reply, Chat, Approval Card |
+| [**Microsoft Office 365**](microsoft-office365) | Send and manage emails with attachments | Send Email, Search Emails, Reply to Email |
 
 ### 👥 Identity & Access Management
 
@@ -37,7 +37,7 @@ User and identity management platforms.
 
 | Integration | Description | Actions |
 |-------------|-------------|---------|
-| [**Microsoft Azure Active Directory**](integrations/microsoft-azure-ad) | Query and manage users in Azure AD | Lookup User, List Users |
+| [**Microsoft Azure Active Directory**](microsoft-azure-ad) | Query and manage users in Azure AD | Lookup User, List Users |
 
 ---
 

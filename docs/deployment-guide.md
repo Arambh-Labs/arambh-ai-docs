@@ -15,7 +15,6 @@ This guide will walk you through the deployment process for Arambh AI.
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Deployment Options](#deployment-options)
-- [Post-Deployment Verification](#post-deployment-verification)
 - [FAQ](#faq)
 - [Troubleshooting](#troubleshooting)
 
