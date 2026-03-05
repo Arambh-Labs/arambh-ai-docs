@@ -124,25 +124,9 @@ Arambh AI is deployed as a virtual machine within your own network infrastructur
 ## Security Features
 
 ### Network Security
-- **Port Access**: Only port 443 (HTTPS) is open for communication
-- **Encryption**: TLS 1.3 for all data in transit
 - **IP Whitelisting**: Restrict access to specific IP addresses
 - **Site-to-Site Connectivity**: VPN or direct connect support
 - **Cloud Security**: Azure Firewall and DDoS protection (production deployments)
-- **Cloud Security Posture Management (CSPM)**: Available for enhanced security monitoring
-
-### Data Protection
-
-#### Data in Transit
-- All communications encrypted using TLS 1.3
-- Secure HTTPS connections only (port 443)
-- No unencrypted data transmission
-
-#### Data at Rest
-- Stored securely in local database
-- All credentials and sensitive data encrypted
-- Volume-level encryption available for production environments
-- Regular backup and disaster recovery options
 
 ### AI Model Data Privacy
 Arambh AI uses Azure Direct Models through Microsoft's Azure AI Foundry service. Your data is protected with the following guarantees:
