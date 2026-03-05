@@ -43,6 +43,10 @@ To use this integration, your Azure AD application requires the following Micros
 
 - `User.Read.All` - Read all users' full profiles
 - `Directory.Read.All` - Read directory data
+- `User.ReadWrite.All` - Enable, disable, and reset passwords for users
+- `User.EnableDisableAccount.All` - Enable and disable user accounts (least privileged for `accountEnabled`; requires `User.Read.All`)
+- `User-PasswordProfile.ReadWrite.All` - Reset user passwords (least privileged for `passwordProfile`)
+- `User.RevokeSessions.All` - Revoke user sign-in sessions
 
 **Permission Type:** Application permissions (client credentials flow)
 
@@ -64,7 +68,7 @@ To use this integration, your Azure AD application requires the following Micros
 
 - Navigate to "API permissions"
 - Click "Add a permission" → Microsoft Graph → Application permissions
-- Add `User.Read.All` and `Directory.Read.All`
+- Add `User.Read.All`, `Directory.Read.All`, `User.ReadWrite.All`, `User.EnableDisableAccount.All`, `User-PasswordProfile.ReadWrite.All`, and `User.RevokeSessions.All`
 - Click "Grant admin consent" (requires admin privileges)
 
 ### 3. Create Client Secret
@@ -147,6 +151,95 @@ Retrieve a list of users with optional filtering.
 - Array of user objects
 - Total count
 - Pagination links if more results available
+
+### 3. Enable User
+
+Enable a user account in Azure AD by setting `accountEnabled` to `true`.
+
+**Action:** `microsoft_azureactivedirectory--enable_user`
+
+#### Parameters
+
+- `user_identifier` (required): User's userPrincipalName, email address, or Azure AD object ID
+- `config_name` (optional): Configuration profile name (default: "default")
+
+#### Returns
+
+```json
+{
+  "status": "success",
+  "result": "User account enabled successfully"
+}
+```
+
+---
+
+### 4. Disable User
+
+Disable a user account in Azure AD by setting `accountEnabled` to `false`.
+
+**Action:** `microsoft_azureactivedirectory--disable_user`
+
+#### Parameters
+
+- `user_identifier` (required): User's userPrincipalName, email address, or Azure AD object ID
+- `config_name` (optional): Configuration profile name (default: "default")
+
+#### Returns
+
+```json
+{
+  "status": "success",
+  "result": "User account disabled successfully"
+}
+```
+
+---
+
+### 5. Reset Password
+
+Reset a user's password in Azure AD.
+
+**Action:** `microsoft_azureactivedirectory--reset_password`
+
+#### Parameters
+
+- `user_identifier` (required): User's userPrincipalName, email address, or Azure AD object ID
+- `password` (required): The new password to set for the user
+- `force_change_next_sign_in` (optional): If `true`, the user must change their password on next sign-in (default: `false`)
+- `config_name` (optional): Configuration profile name (default: "default")
+
+#### Returns
+
+```json
+{
+  "status": "success",
+  "result": "Password reset successfully"
+}
+```
+
+---
+
+### 6. Revoke Sign-In Sessions
+
+Revoke all active sign-in sessions for a user, forcing them to re-authenticate on all devices.
+
+**Action:** `microsoft_azureactivedirectory--revoke_sign_in_sessions`
+
+#### Parameters
+
+- `user_identifier` (required): User's userPrincipalName, email address, or Azure AD object ID
+- `config_name` (optional): Configuration profile name (default: "default")
+
+#### Returns
+
+```json
+{
+  "status": "success",
+  "result": "Sign-in sessions revoked successfully",
+  "value": true
+}
+```
 
 ---
 
