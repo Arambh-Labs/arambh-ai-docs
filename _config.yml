@@ -23,7 +23,7 @@ email: info@arambhlabs.com
 description: >- # this means to ignore newlines until "baseurl:"
   Arambh AI Product Documentation
 baseurl: "" # the subpath of your site, e.g. /blog (empty for local dev, "/arambh-ai-docs" for GitHub Pages)
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://arambh-labs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
