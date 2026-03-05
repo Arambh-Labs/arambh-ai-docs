@@ -145,10 +145,12 @@ For more information, see: [Microsoft Learn - Data Privacy with Azure OpenAI](ht
 ---
 
 ## FAQ
+
 TBD
 
 ## Troubleshooting
-TDB
+
+TBD
 
 ### Need Help?
 If you're experiencing issues not covered here:
