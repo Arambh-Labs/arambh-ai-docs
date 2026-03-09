@@ -77,7 +77,7 @@ Arambh AI's automated investigation engine analyzes security alerts and incident
 
 ### How Automated Investigation Works
 
-![Autonomous Investigation Flow](/assets/images/autonomousinvestigation.png)
+![Autonomous Investigation Flow]({{ site.baseurl }}/assets/images/autonomousinvestigation.png)
 
 When an alert is received from your SIEM or other security tools, Arambh AI:
 

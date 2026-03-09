@@ -98,7 +98,7 @@ Arambh AI is deployed and managed by Arambh Labs in your nearest supported Azure
 
 **Architecture:**
 
-![Arambh AI Deployment Architecture](/assets/images/deployment-architecture.png)
+![Arambh AI Deployment Architecture]({{ site.baseurl }}/assets/images/deployment-architecture.png)
 
 ### Option 2: VM-Based Deployment (Customer Network)
 Arambh AI is deployed as a virtual machine within your own network infrastructure.
