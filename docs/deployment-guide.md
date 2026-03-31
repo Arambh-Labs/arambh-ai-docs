@@ -96,6 +96,13 @@ Arambh AI is deployed and managed by Arambh Labs in your nearest supported Azure
 - Scalable resources based on your needs
 - 24/7 monitoring and support
 
+## Security Features
+
+### Network Security
+- **IP Whitelisting**: Restrict access to specific IP addresses
+- **Site-to-Site Connectivity**: VPN or direct connect support
+- **Cloud Security**: Azure Firewall and DDoS protection (production deployments)
+
 **Architecture:**
 
 ![Arambh AI Deployment Architecture]({{ site.baseurl }}/assets/images/deployment-architecture.png)
@@ -110,26 +117,16 @@ Arambh AI is deployed as a virtual machine within your own network infrastructur
 - Direct integration with on-premises systems
 
 **Requirements:**
-- Provision VM according to system requirements
+- Provision VM according to system requirements given above
 - Configure network access to port 443
 - Manage security and updates
 - Provide backup and disaster recovery
 
-**Connectivity:**
-- Site-to-site VPN or direct connectivity
-- IP whitelisting for secure access
-- Integration with your existing SIEM and SOAR platforms
-
-## Security Features
-
-### Network Security
-- **IP Whitelisting**: Restrict access to specific IP addresses
-- **Site-to-Site Connectivity**: VPN or direct connect support
-- **Cloud Security**: Azure Firewall and DDoS protection (production deployments)
-
 ### AI Model Data Privacy
-Arambh AI uses Azure Direct Models through Microsoft's Azure AI Foundry service. Your data is protected with the following guarantees:
+In both the hosting options mentioned above, Arambh AI uses models through Microsoft's Azure AI Foundry service.
+You may opt to use models from Arambh AI cloud, or from your own Azure subscription.
 
+Azure AI Foundry provides the following data protection guarantees:
 ✓ **Your data is NOT available to other customers**
 ✓ **Your data is NOT available to OpenAI or other model providers**
 ✓ **Your data is NOT used to improve foundation models**
