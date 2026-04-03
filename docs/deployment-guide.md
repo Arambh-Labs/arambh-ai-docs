@@ -127,11 +127,11 @@ In both the hosting options mentioned above, Arambh AI uses models through Micro
 You may opt to use models from Arambh AI cloud, or from your own Azure subscription.
 
 Azure AI Foundry provides the following data protection guarantees:
-✓ **Your data is NOT available to other customers**
-✓ **Your data is NOT available to OpenAI or other model providers**
-✓ **Your data is NOT used to improve foundation models**
-✓ **Your data is NOT used to train, retrain, or improve models** (without your permission)
-✓ **Fine-tuned models are available exclusively for your use**
+- are NOT available to other customers.
+- are NOT available to OpenAI or other Azure Direct Model providers.
+- are NOT used by Azure Direct Model providers to improve their models or services.
+- are NOT used to train any generative AI foundation models without your permission or instruction.
+- Customer Data, Prompts, and Completions are NOT used to improve Microsoft or third-party products or services without your explicit permission or instruction.
 
 **Azure AI Foundry** is a fully managed Azure service, hosted by Microsoft, ensuring enterprise-grade security and compliance.
 
