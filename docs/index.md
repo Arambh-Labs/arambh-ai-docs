@@ -49,22 +49,6 @@ Comprehensive guide for end users. Learn how to navigate the interface, use core
 - **Integrations:** Need to connect external services? See the [Integrations Guide]({{ '/docs/integrations-guide/' | relative_url }})
 - **Support:** Need help? Visit our [Help Center](#) or contact support@arambhlabs.com
 
-## Additional Resources
-
-- [API Documentation](#) - REST API reference and examples
-- [Release Notes](#) - Latest updates and changes
-- [Community Forums](#) - Connect with other users
-- [GitHub Repository](#) - Source code and issue tracking
-- [Video Tutorials](#) - Visual guides and walkthroughs
-
-## Contributing to Documentation
-
-Found an issue or want to improve our docs? We welcome contributions!
-
-- Submit issues or suggestions on [GitHub](#)
-- Propose changes via pull requests
-- Join our documentation working group
-
 ---
 
 **Last Updated:** March 4, 2026
