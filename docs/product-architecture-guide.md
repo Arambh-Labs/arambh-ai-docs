@@ -8,7 +8,7 @@ nav_order: 3
 
 # Arambh AI — Model & System Documentation
  
-Arambh AI is an agentic Security Operations Centre (SOC) assistant that autonomously investigates security alerts and threat-hunt hypotheses. It integrates with SIEM platforms (Google SecOps, Microsoft Sentinel, IBM QRadar, Splunk, Securonix, Elasticsearch), endpoint tools (CrowdStrike Falcon, Cortex XSIAM), threat intelligence sources (AbuseIPDB, APIVoid), and SOAR platforms (Google SecOps SOAR, FortiSOAR).
+Arambh AI is an agentic Security Operations Centre (SOC) assistant that autonomously investigates security alerts and threat-hunt hypotheses.
  
 ---
  
@@ -20,13 +20,16 @@ Arambh AI is an agentic Security Operations Centre (SOC) assistant that autonomo
 - **Human-in-the-loop:** Investigations run in either *auto* or *assisted* mode. In assisted mode, the system pauses for analyst approval at designated steps.
 - **Modularity:** Tools, workplans, and integrations are independently versioned and hot-swappable without redeploying the core system.
 - **Observability:** Every tool call and state transition is logged and stored for audit.
+
 ### Investigation Plan Development
- 
-1. Training content is prepared for each supported threat category — endpoint, cloud, SaaS/Kubernetes, identity, and others — enabling the system to consistently derive appropriate investigation steps for any new alert of that type.
-2. Training content is prepared per target query language (SIEM, data lake, or endpoint platform), covering grammar, syntax rules, and known pitfalls so the system generates valid, optimised queries for each environment.
-3. Training content is provided per integrated platform to guide environment discovery — how to identify available indexes, enabled log sources, and other contextual signals — allowing the system to adapt its approach to each customer's specific data landscape.
-4. Security analysts can optionally supply Standard Operating Procedures (SOPs) to encode their organisation's best practices, escalation policies, and investigative preferences, which the system incorporates alongside the general training content.
-5. When a new alert arrives, the system reasons across all of the above — threat category knowledge, query language rules, environment context, and any applicable SOPs — to plan and execute a tailored set of investigation steps.
+
+1. **Ships with the product by default** — the system comes pre-loaded with training content covering:
+   - Threat categories (endpoint, cloud, SaaS/Kubernetes, identity, and others), enabling it to consistently derive appropriate investigation steps for any new alert of that type.
+   - Target query languages (SIEM, data lake, or endpoint platform), covering grammar, syntax rules, and known pitfalls so the system generates valid, optimised queries for each environment.
+   - Per-platform environment discovery (how to identify available indexes, enabled log sources, and other contextual signals), allowing the system to adapt its approach to each customer's specific data landscape.
+2. **Optionally supplied by the customer** — security analysts can supply Standard Operating Procedures (SOPs) to encode their organisation's best practices, escalation policies, and investigative preferences, which the system incorporates alongside the built-in training content.
+3. **At runtime** — when a new alert arrives, the system reasons across all of the above (threat category knowledge, query language rules, environment context, and any applicable SOPs) to plan and execute a tailored set of investigation steps.
+
 ### LLM Configuration
  
 The system uses an ensemble of models specialised for different tasks:
@@ -58,6 +61,7 @@ The system uses an ensemble of models specialised for different tasks:
 - **Email forwarder:** Sends failure reports including a direct investigation URL.
 - **Jira forwarder:** Creates a Jira issue for failed investigations when configured.
 - **Event bus:** An investigation-completed event is published on every completion (success or failure), enabling downstream consumers to react in real time.
+
 ---
  
 ## 3. Core Algorithms
@@ -84,6 +88,7 @@ Verdicts follow a strict precedence ladder based on the proportion of critical i
 - **Context budgets** are enforced to prevent context-window overflow that could degrade output quality.
 - **Trajectory evaluation** records ground-truth and model-predicted tool-call sequences for offline accuracy assessment.
 - **Analyst feedback** on investigation outputs is captured and used to continuously improve workplan retrieval and tool selection.
+
 ---
  
 ## 5. Bias Considerations
@@ -116,6 +121,7 @@ Microsoft Foundry is built on the [Microsoft Responsible AI Standard](https://ww
 - **Discover** — risks are identified and measured before and after deployment, including adversarial prompt testing for jailbreak vulnerabilities.
 - **Protect** — content filters, prompt shields, and abuse detection are applied at the model layer to block harmful outputs before they reach users.
 - **Govern** — tracing, monitoring, and compliance integrations provide continuous oversight of model behaviour in production.
+
 Arambh AI's own prompt-injection guardrail layer operates on top of these platform-level protections, providing defence-in-depth.
  
 ### References
