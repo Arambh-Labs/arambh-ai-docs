@@ -15,32 +15,15 @@ Welcome to the Arambh AI documentation. Find everything you need to deploy, inte
 ### 📦 [Deployment Guide]({{ '/docs/deployment-guide/' | relative_url }})
 Complete guide for deploying Arambh AI in your environment. Covers installation, configuration, deployment options, and post-deployment verification.
 
-**Topics covered:**
-- Prerequisites and installation
-- Configuration and environment setup
-- Docker, Kubernetes, and cloud deployments
-- Health checks and verification
-- FAQ and troubleshooting
-
 ### 🔌 [Integrations Guide]({{ '/docs/integrations-guide/' | relative_url }})
 Learn how to connect Arambh AI with third-party services and platforms. Includes setup instructions for popular tools and custom integration options.
 
-**Topics covered:**
-- Authentication methods
-- Pre-built integrations (Slack, Jira, GitHub, etc.)
-- Database and cloud storage connections
-- Webhooks and custom integrations
-- FAQ and troubleshooting
+### 🏗️ [Architecture Guide]({{ '/docs/product-architecture-guide/' | relative_url }})
+Deep dive into how Arambh AI is designed and built. Covers model planning, the investigation lifecycle, core algorithms, output quality controls, and bias mitigations.
 
 ### 📖 [User Guide]({{ '/docs/user-guide/' | relative_url }})
 Comprehensive guide for end users. Learn how to navigate the interface, use core features, and get the most out of Arambh AI.
 
-**Topics covered:**
-- Getting started and onboarding
-- Dashboard and navigation
-- Core features and workflows
-- Account and security settings
-- FAQ and troubleshooting
 
 ## Quick Links
 

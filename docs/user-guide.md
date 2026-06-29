@@ -79,6 +79,8 @@ Arambh AI's automated investigation engine analyzes security alerts and incident
 
 ![Autonomous Investigation Flow]({{ site.baseurl }}/assets/images/autonomousinvestigation.png)
 
+For a deeper look at the models, algorithms, and decision logic behind this process, see the [Architecture Guide](/docs/product-architecture-guide/).
+
 When an alert is received from your SIEM or other security tools, Arambh AI:
 
 1. **Alert Enrichment**: Gathers context from multiple sources (EDR, firewall logs, identity systems, threat intelligence)
