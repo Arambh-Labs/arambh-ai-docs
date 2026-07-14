@@ -25,18 +25,31 @@ Firewall and network security platforms for traffic control and threat preventio
 
 ### 🛡️ Endpoint Detection & Response
 
-Endpoint security platforms for threat detection, investigation, and response.
-Eg, Crowdstrike Falcon, Microsoft Defender
+## Supported discovery integrations
 
-### 💬 Communication & Collaboration
+| Integration                                                                     | Toolkit name     | What it primarily discovers |
+| ------------------------------------------------------------------------------- | ---------------- | --------------------------- | ------------------------------------------------------------------- |
+| [Microsoft 365]({{ '/docs/agent-discovery-guide/microsoft-365/'                 | relative_url }}) | `microsoft_office365`       | Entra service principals, OAuth grants, Microsoft 365 data surfaces |
+| [Google Workspace]({{ '/docs/agent-discovery-guide/google-workspace/'           | relative_url }}) | `google_workspace`          | Third-party OAuth apps and scopes across Workspace users            |
+| [GitHub]({{ '/docs/agent-discovery-guide/github/'                               | relative_url }}) | `github`                    | GitHub Apps, SSO PATs, repos, workflows, org secrets                |
+| [Google Cloud Platform]({{ '/docs/agent-discovery-guide/google-cloud-platform/' | relative_url }}) | `gcp`                       | Project IAM, service accounts, keys, cloud surfaces                 |
+| [Okta]({{ '/docs/agent-discovery-guide/okta/'                                   | relative_url }}) | `okta`                      | OIDC apps, authorization servers, granted scopes                    |
+| [Slack]({{ '/docs/agent-discovery-guide/slack/'                                 | relative_url }}) | `slack`                     | Workspace apps and OAuth scope history                              |
+| [LiteLLM Proxy]({{ '/docs/agent-discovery-guide/litellm-proxy/'                 | relative_url }}) | `litellm_proxy`             | Virtual keys, users, teams, models, MCP servers                     |
+| [Endpoint Discovery]({{ '/docs/agent-discovery-guide/endpoint-discovery/'       | relative_url }}) | `endpoint_discovery`        | Local AI harnesses, MCP servers, endpoint credentials               |
 
-Tools for incident management, notifications, alerts, and team collaboration.
-Eg, Service Now, JIRA, Office 365, Microsoft Teams
+---
 
-### 👥 Identity & Access Management
+## How to integrate (shared flow)
 
-User and identity management platforms.
-Eg, Azure Active Directory
+1. **Choose a toolkit** from the table above and follow its setup page.
+2. **Create credentials** with the listed permissions or scopes (read-only where possible).
+3. **Add a configuration** in Arambh AI → Integrations → [toolkit] → Configurations.
+4. **Run a healthcheck** from the integration page to confirm connectivity.
+5. **Run blast radius discovery** (see API below).
+6. **Review results** in Agents (agents list and blast-radius graph).
+
+You can run several integrations; each discovery is stored per toolkit (and config). Successful runs also contribute to a **global identity** overlay that links identities across toolkits.
 
 ---
 
