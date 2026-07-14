@@ -29,6 +29,11 @@ Learn how to connect Arambh AI with third-party services and platforms. Browse o
 
 [Browse Integrations →]({{ '/docs/integrations/' | relative_url }}){: .btn .btn-outline }
 
+### 💥 Agent Discovery
+Learn how to connect Arambh AI with third-party services and platforms to discover different AI agents and their potential blast radius.
+
+[Browse Agent Discovery Guide →]({{ 'docs/agent-discovery-guide' | relative_url }}){: .btn .btn-outline}
+
 ### 📖 User Guide
 Comprehensive guide for end users. Learn how to navigate the interface, use core features, and get the most out of Arambh AI.
 
