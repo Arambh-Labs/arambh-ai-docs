@@ -18,9 +18,6 @@ Complete guide for deploying Arambh AI in your environment. Covers installation,
 ### 🔌 [Integrations Guide]({{ '/docs/integrations-guide/' | relative_url }})
 Learn how to connect Arambh AI with third-party services and platforms. Includes setup instructions for popular tools and custom integration options.
 
-### 🏗️ [Architecture Guide]({{ '/docs/product-architecture-guide/' | relative_url }})
-Deep dive into how Arambh AI is designed and built. Covers model planning, the investigation lifecycle, core algorithms, output quality controls, and bias mitigations.
-
 ### 💥 [Agent Discovery Guide]({{ '/docs/agent-discovery-guide/' | relative_url }})
 Learn how to connect Arambh AI with third-party services and platforms to discover different AI agents and their potential blast radius.
 
