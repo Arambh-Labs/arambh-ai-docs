@@ -13,18 +13,6 @@ Learn how to connect Arambh AI with third-party services and platforms to discov
 
 ---
 
-## Integration Categories
-
-### 🔒 Security & SIEM
-
-Security Information and Event Management platforms for threat detection and analysis, Eg, Google Chronicle, Cisco Splunk, IBM QRadar, etc
-
-### 🔥 Network Security
-
-Firewall and network security platforms for traffic control and threat prevention. Eg, Fortinet Fortigate
-
-### 🛡️ Endpoint Detection & Response
-
 ## Supported discovery integrations
 
 | Integration                                                                     | Toolkit name     | What it primarily discovers |
@@ -46,8 +34,6 @@ Firewall and network security platforms for traffic control and threat preventio
 2. **Create credentials** with the listed permissions or scopes (read-only where possible).
 3. **Add a configuration** in Arambh AI → Integrations → [toolkit] → Configurations.
 4. **Run a healthcheck** from the integration page to confirm connectivity.
-5. **Run blast radius discovery** (see API below).
-6. **Review results** in Agents (agents list and blast-radius graph).
 
 You can run several integrations; each discovery is stored per toolkit (and config). Successful runs also contribute to a **global identity** overlay that links identities across toolkits.
 
@@ -65,30 +51,6 @@ Most integrations follow a standard authentication pattern:
 4. **Configure in Arambh AI** with your credentials
 5. **Test Connection** to verify setup
 
----
-
-## FAQ
-
-### How many integrations can I enable simultaneously?
-
-You can enable as many integrations as needed. There's no limit on the number of active integrations.
-
-### Are integrations available on all pricing plans?
-
-Yes, integrations are available on all plans.
-
-### How do I disconnect an integration?
-
-Navigate to the Integrations page, find the integration you want to remove, and click "Disable".
-
-### Can I use multiple configurations for the same integration?
-
-## Yes, you can add multiple configurations, and give them a unique name.
-
-## Troubleshooting
-
-TDB
-
 ## Need More Help?
 
 ### Support Channels
@@ -98,4 +60,4 @@ TDB
 
 ---
 
-**Last Updated:** March 2026
+**Last Updated:** July 2026

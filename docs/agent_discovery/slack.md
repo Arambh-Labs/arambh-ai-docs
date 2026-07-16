@@ -12,10 +12,6 @@ Inventory workspace apps (and optionally services) from Slack integration logs t
 
 **Toolkit name:** `slack`
 
-**What discovery finds:** Workspace apps derived from `team.integrationLogs` (scope history, active/inactive signals from change types), per-user consent edges, and optional Slack “service” integrations. Dangerous scopes (history, files, users, admin families) are highlighted.
-
-> This scan is **history-based** via integration logs — not a live install directory API.
-
 ---
 
 ## Table of Contents
@@ -23,20 +19,16 @@ Inventory workspace apps (and optionally services) from Slack integration logs t
 - [Configuration](#configuration)
 - [Required permissions](#required-permissions)
 - [Setup instructions](#setup-instructions)
-- [Run discovery](#run-discovery)
-- [Discovery options](#discovery-options)
-- [What you get](#what-you-get)
-- [Troubleshooting](#troubleshooting)
 
 ---
 
 ## Configuration
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| **Bot token** | Password | Yes | Bot User OAuth Token — used for notifications; fallback for discovery if no admin token |
-| **Channel ID** | String | Yes | Default channel for notifications (not required for discovery itself) |
-| **Admin token** | Password | No | User token (`xoxp-...`) with admin access for `team.integrationLogs`. Preferred for discovery. |
+| Field           | Type     | Required | Description                                                                                    |
+| --------------- | -------- | -------- | ---------------------------------------------------------------------------------------------- |
+| **Bot token**   | Password | Yes      | Bot User OAuth Token — used for notifications; fallback for discovery if no admin token        |
+| **Channel ID**  | String   | Yes      | Default channel for notifications (not required for discovery itself)                          |
+| **Admin token** | Password | No       | User token (`xoxp-...`) with admin access for `team.integrationLogs`. Preferred for discovery. |
 
 ---
 
@@ -68,49 +60,6 @@ Without admin integration-log access, discovery cannot enumerate workspace apps 
 1. Integrations → Slack → **Add Configuration**
 2. Enter bot token, channel ID, and optional admin token
 3. Save and run **Healthcheck**
-
----
-
-## Run discovery
-
-```json
-{
-  "toolkit_name": "slack",
-  "config_name": "default",
-  "include_services": false
-}
-```
-
-Endpoint: `POST /graphsapi/integrations/blast-radius-discovery`
-
----
-
-## Discovery options
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `include_services` | `false` | When `true`, also emit Slack service integrations from logs |
-
----
-
-## What you get
-
-| Graph element | Examples |
-|---------------|----------|
-| Root | Slack team / workspace |
-| Roles | Slack apps (and optional services) |
-| Identities | Users with consent history |
-| Edges | has-role, has-user, consented-to |
-
----
-
-## Troubleshooting
-
-| Symptom | What to check |
-|---------|----------------|
-| `not_allowed` / missing_scope on integrationLogs | Admin token (or bot) has access to `team.integrationLogs` |
-| Thin / empty app list | Logs may be limited; integrations with little history may not appear |
-| Notifications work but discovery fails | Separate concern — set **Admin token** for discovery |
 
 ---
 
