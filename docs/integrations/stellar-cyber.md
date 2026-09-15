@@ -12,8 +12,6 @@ Query and update cases, search raw security events, and manage detections in Ste
 
 **Category:** SIEM / Open XDR
 
-**Description:** Stellar Cyber rolls up correlated alerts into scored **cases**. This integration can list and update those cases, pull the alerts behind a specific case, and when a case doesn't give you enough detail, drop down to raw ElasticSearch queries against the underlying event data.
-
 ---
 
 ## Table of Contents
@@ -27,7 +25,6 @@ Query and update cases, search raw security events, and manage detections in Ste
   - [Search Events](#4-search-events)
   - [Update Event](#5-update-event)
 - [Best Practices](#best-practices)
-- [FAQ](#faq)
 
 ---
 
@@ -46,9 +43,9 @@ Query and update cases, search raw security events, and manage detections in Ste
 
 Stellar Cyber authenticates by exchanging a long-lived API key for a short-lived JWT.
 
-- The user you generate the key for needs **Root scope** and **Super Admin** privileges.
-- `search_events` specifically only works with a key made through **Generate New Token**. Keys made through the simpler **Create API Key** option are scoped and can't reach the raw data endpoint — you'll get a 403.
-- Case actions (list/get/update) work with either type of key, as long as the user can see the relevant tenant.
+- The user you generate the key for needs **Root scope** and **Super Admin** privileges - this applies across the board, not just to `search_events`.
+
+See Stellar Cyber's [API Authentication docs](https://docs.stellarcyber.ai/prod-docs/5.1.x/Using/API/API-Auth.htm?Highlight=authentication) for the full requirements.
 
 ---
 
@@ -59,7 +56,7 @@ Stellar Cyber authenticates by exchanging a long-lived API key for a short-lived
 - Log into the Stellar Cyber console
 - **System → Administration → Users**, pick the user, click **Edit**
 - Open **API Access → Generate New Token**
-- Copy the key now — it's shown once
+- Copy the key now - it's shown once
 
 ### 2. Note the email and hostname
 
@@ -90,7 +87,7 @@ You should get back a JSON body with `access_token`.
 
 ### 1. List Cases
 
-Pull cases — Stellar Cyber's aggregated, scored incidents — with optional filters.
+Pull cases - Stellar Cyber's aggregated, scored incidents - with optional filters.
 
 **Action:** `stellar_cyber--list_cases`
 
@@ -144,7 +141,7 @@ Pull cases — Stellar Cyber's aggregated, scored incidents — with optional fi
 
 ### 2. Get Case Details
 
-Full detail for one case by ID — score, status, tags, and the alerts rolled into it.
+Full detail for one case by ID - score, status, tags, and the alerts rolled into it.
 
 **Action:** `stellar_cyber--get_case_details`
 
@@ -210,13 +207,13 @@ Needs at least one of the fields above besides `case_id`.
 
 ### 4. Search Events
 
-Raw ElasticSearch DSL against Stellar Cyber's event indices (default `aella-ser-*`) — for when a case rollup isn't granular enough.
+Raw ElasticSearch DSL against Stellar Cyber's event indices (default `aella-ser-*`) - for when a case rollup isn't granular enough.
 
 **Action:** `stellar_cyber--search_events`
 
 **Endpoint:** `POST /connect/api/data/{index}/_search`
 
-**Needs:** a key from **Generate New Token** on a Root-scope account — see [Required Permissions](#required-permissions).
+**Needs:** the same Root-scope, Super Admin key as every other action - see [Required Permissions](#required-permissions).
 
 #### Parameters
 
@@ -250,7 +247,7 @@ Raw ElasticSearch DSL against Stellar Cyber's event indices (default `aella-ser-
 
 ### 5. Update Event
 
-Set status, add a comment, or tag one event — addressed by index + document ID, which come straight out of a `search_events` hit.
+Sets the status, adds a comment, or tags a single event.
 
 **Action:** `stellar_cyber--update_event`
 
@@ -285,23 +282,7 @@ Needs at least one of `status`, `comments`, `tag_op`/`tag`.
 
 - **Tokens refresh themselves.** JWTs expire 10 minutes after issuance; the integration renews them from the stored API key roughly 30 seconds before expiry, so there's nothing to manage day-to-day.
 - **Use cases first, events only when you need to.** `list_cases` / `get_case_details` / `update_case` cover most investigation work. Reach for `search_events` / `update_event` when you need to look at (or triage) the individual detections behind a case.
-- **Keep `search_events` queries narrow.** The event indices get large fast — scope the query and set a sane `size` rather than pulling everything back.
-
----
-
-## FAQ
-
-### Does every action need a Super Admin account?
-
-No — just `search_events`. List/Get/Update Case work with any user who can see the relevant tenant, but the key itself still has to come from a Root-scope Super Admin's **Generate New Token**.
-
-### Why is `search_events` returning a 403?
-
-The key was probably made through **Create API Key** instead of **Generate New Token**, or the user isn't Root-scope/Super Admin. Regenerate it per [Setup Instructions](#setup-instructions).
-
-### Where do I get the `index` / `event_id` for Update Event?
-
-Run `search_events` first — each hit carries `_index` and `_id`, which map directly onto those two fields.
+- **Keep `search_events` queries narrow.** The event indices get large fast - scope the query and set a sane `size` rather than pulling everything back.
 
 ---
 
