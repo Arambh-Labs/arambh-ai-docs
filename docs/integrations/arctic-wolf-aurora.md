@@ -72,7 +72,7 @@ The custom application must be granted the following privileges in the Aurora Ma
 3. Copy the **Tenant ID** shown on the page
 4. Click **Add Application** and enter a name for the application (e.g. `Arambh AI`)
 5. Grant the privileges listed in [Required Permissions](#required-permissions)
-6. Save the application, then copy the **Application ID** and **Application Secret** — treat the secret as a password and store it securely
+6. Save the application, then copy the **Application ID** and **Application Secret** - treat the secret as a password and store it securely
 
 ### 2. Configure in Arambh AI
 
@@ -115,8 +115,8 @@ Get the threats (malicious or suspicious files) Aurora has found on a device, wi
 #### Returns
 
 - One entry per matching device, each containing:
-  - `device`: A summary of the device — ID, name, hostname, state, safety status, OS version, IP and MAC addresses, last logged-in user, policy, agent version, and offline date. (Populated when the device is looked up by hostname.)
-  - `threats`: Array of threat objects including classification, score, SHA256, file path, and file status. Each threat also carries a `file_status_label` — one of `Unsafe`, `Quarantined`, `Whitelisted`, `Suspicious`, `File Removed`, or `Corrupt`.
+  - `device`: A summary of the device - ID, name, hostname, state, safety status, OS version, IP and MAC addresses, last logged-in user, policy, agent version, and offline date. (Populated when the device is looked up by hostname.)
+  - `threats`: Array of threat objects including classification, score, SHA256, file path, and file status. Each threat also carries a `file_status_label` - one of `Unsafe`, `Quarantined`, `Whitelisted`, `Suspicious`, `File Removed`, or `Corrupt`.
   - `total_number_of_items`: Total number of threats Aurora reports for the device, which may be higher than the number returned when `limit` is reached
 
 #### Device Lookup
@@ -127,13 +127,13 @@ A single hostname can match several Aurora devices (for example, a reimaged mach
 
 ### 2. Run InstaQuery
 
-Run an InstaQuery — a live search across endpoints for artifacts Aurora Focus stores locally — and return its results.
+Run an InstaQuery - a live search across endpoints for artifacts Aurora Focus stores locally - and return its results.
 
 **Action:** `arctic_wolf_aurora--run_instaquery`
 
 #### Parameters
 
-- `artifact` (required): Type of artifact to search for — one of `File`, `Process`, `NetworkConnection`, `RegistryKey`
+- `artifact` (required): Type of artifact to search for - one of `File`, `Process`, `NetworkConnection`, `RegistryKey`
 - `match_value_type` (required): The attribute of the artifact to match against. It must be valid for the chosen artifact:
 
   | Artifact | Valid `match_value_type` values |
@@ -182,7 +182,7 @@ Yes, use the `config_name` parameter to maintain multiple configurations (e.g., 
 
 ### How do I find a device ID?
 
-The device ID is shown on the device's page in the Aurora Management Console. You can also call "Get Device Threats" with a hostname — the `device` summary in the response includes the device ID.
+The device ID is shown on the device's page in the Aurora Management Console. You can also call "Get Device Threats" with a hostname - the `device` summary in the response includes the device ID.
 
 ---
 
