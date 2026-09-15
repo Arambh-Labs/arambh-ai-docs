@@ -23,7 +23,6 @@ Integration with Arctic Wolf Aurora Endpoint Security for device lookup and endp
 - [Supported Actions](#supported-actions)
   - [Get Device Threats](#1-get-device-threats)
   - [Run InstaQuery](#2-run-instaquery)
-- [FAQ](#faq)
 
 ---
 
@@ -173,21 +172,6 @@ Run an InstaQuery - a live search across endpoints for artifacts Aurora Focus st
 - `results`: Array of matching artifacts (up to 500), each with the hostname and device ID that reported it, when it was first and last observed, and its properties
 
 ---
-
-## FAQ
-
-### Can I use multiple configurations?
-
-Yes, use the `config_name` parameter to maintain multiple configurations (e.g., `production`, `staging`). Each configuration is stored separately.
-
-### How do I find a device ID?
-
-The device ID is shown on the device's page in the Aurora Management Console. You can also call "Get Device Threats" with a hostname - the `device` summary in the response includes the device ID.
-
----
-
-**Related Integrations:**
-- [SentinelOne](sentinel-one) - Alternative EDR platform
 
 **Back to:** [Integrations Overview](../)
 
