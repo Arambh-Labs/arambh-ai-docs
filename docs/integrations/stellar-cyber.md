@@ -24,7 +24,6 @@ Query and update cases, search raw security events, and manage detections in Ste
   - [Update Case](#3-update-case)
   - [Search Events](#4-search-events)
   - [Update Event](#5-update-event)
-- [Best Practices](#best-practices)
 
 ---
 
@@ -275,14 +274,6 @@ Needs at least one of `status`, `comments`, `tag_op`/`tag`.
   "comments": "Reviewed, benign."
 }
 ```
-
----
-
-## Best Practices
-
-- **Tokens refresh themselves.** JWTs expire 10 minutes after issuance; the integration renews them from the stored API key roughly 30 seconds before expiry, so there's nothing to manage day-to-day.
-- **Use cases first, events only when you need to.** `list_cases` / `get_case_details` / `update_case` cover most investigation work. Reach for `search_events` / `update_event` when you need to look at (or triage) the individual detections behind a case.
-- **Keep `search_events` queries narrow.** The event indices get large fast - scope the query and set a sane `size` rather than pulling everything back.
 
 ---
 
